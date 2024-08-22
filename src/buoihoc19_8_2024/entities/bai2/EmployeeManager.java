@@ -15,12 +15,14 @@ public class EmployeeManager implements EmployeeManagerInterface {
     @Override
     public void removeEmployee(String employeeId) throws EmployeeNotFoundException {
         boolean isTrue = false;
+        List<Employee> employees1 = new ArrayList<>();
         for (Employee employee:employees){
             if(employeeId.equals(employee.getEmployeeId())){
-                employees.remove(employee);
+                employees1.add(employee);
                 isTrue = true;
             }
         }
+        employees.removeAll(employees1);
         if(!isTrue){
             throw new EmployeeNotFoundException();
         }
