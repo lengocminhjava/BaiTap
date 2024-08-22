@@ -1,6 +1,6 @@
-package buoihoc19_8_2024.repository;
+package buoihoc19_8_2024.repository.bai1;
 
-import buoihoc19_8_2024.entities.Book;
+import buoihoc19_8_2024.entities.bai1.Book;
 
 public interface libraryInterFace {
     void addBook(Book book);

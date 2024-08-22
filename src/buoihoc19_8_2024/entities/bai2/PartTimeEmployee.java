@@ -1,4 +1,4 @@
-package buoihoc19_8_2024.entities;
+package buoihoc19_8_2024.entities.bai2;
 
 public class PartTimeEmployee extends Employee{
     //Số giờ làm việc
@@ -6,12 +6,8 @@ public class PartTimeEmployee extends Employee{
     //Mức lương theo giờ
     private double hourlyRate;
 
-    public PartTimeEmployee(int hoursWorked, double hourlyRate) {
-        this.hoursWorked = hoursWorked;
-        this.hourlyRate = hourlyRate;
-    }
-    public PartTimeEmployee(String employeeId, String name, double salary, int hoursWorked, double hourlyRate) {
-        super(employeeId, name, salary);
+    public PartTimeEmployee(String employeeId, String name, int hoursWorked, double hourlyRate) {
+        super(employeeId, name, 0);
         this.hoursWorked = hoursWorked;
         this.hourlyRate = hourlyRate;
     }
@@ -19,5 +15,13 @@ public class PartTimeEmployee extends Employee{
     @Override
     double calculateSalary() {
         return hoursWorked*hourlyRate;
+    }
+
+    @Override
+    public String toString() {
+        return  super.toString() +
+                "hoursWorked=" + hoursWorked +
+                ", hourlyRate=" + hourlyRate +
+                ", Total Salary: " + calculateSalary();
     }
 }

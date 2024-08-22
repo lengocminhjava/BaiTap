@@ -1,6 +1,6 @@
-package buoihoc19_8_2024.entities;
+package buoihoc19_8_2024.entities.bai2;
 
-import buoihoc19_8_2024.repository.EmployeeManagerInterface;
+import buoihoc19_8_2024.repository.bai2.EmployeeManagerInterface;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,14 +32,12 @@ public class EmployeeManager implements EmployeeManagerInterface {
         boolean isTrue = false;
         for (Employee employee:employees){
             if(employeeId.equals(employee.getEmployeeId())){
-                System.out.println(employee);
                 isTrue = true;
             }
         }
         if(!isTrue){
             throw new EmployeeNotFoundException();
         }
-        System.out.println("Tìm thành công");
     }
 
     @Override
@@ -53,7 +51,7 @@ public class EmployeeManager implements EmployeeManagerInterface {
 
     @Override
     public void listAllEmployees() {
-        System.out.println();
+        System.out.println("Liệt kê tất cả các nhân viên trong công ty");
         if(employees.isEmpty()){
             System.out.println("Chưa có nhân viên nào");
         }else

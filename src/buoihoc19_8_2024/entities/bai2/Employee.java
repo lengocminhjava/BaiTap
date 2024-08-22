@@ -1,4 +1,4 @@
-package buoihoc19_8_2024.entities;
+package buoihoc19_8_2024.entities.bai2;
 
 public abstract class Employee {
    private String employeeId;

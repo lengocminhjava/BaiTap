@@ -1,6 +1,6 @@
-package buoihoc19_8_2024.entities;
+package buoihoc19_8_2024.entities.bai1;
 
-import buoihoc19_8_2024.repository.libraryInterFace;
+import buoihoc19_8_2024.repository.bai1.libraryInterFace;
 
 import java.util.*;
 

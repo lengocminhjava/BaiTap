@@ -1,7 +1,15 @@
-package buoihoc19_8_2024.entities;
+package buoihoc19_8_2024.entities.bai2;
 
 public class FullTimeEmployee extends Employee{
       private double bonus;
+
+    public FullTimeEmployee() {
+    }
+
+    public FullTimeEmployee(String employeeId, String name, double salary) {
+        super(employeeId, name, salary);
+    }
+
     public FullTimeEmployee(double bonus) {
         this.bonus = bonus;
     }
@@ -23,4 +31,8 @@ public class FullTimeEmployee extends Employee{
         this.bonus = bonus;
     }
 
+    @Override
+    public String toString() {
+        return super.toString() + ", Bonus: " + bonus + ", Total Salary: " + calculateSalary();
+    }
 }
