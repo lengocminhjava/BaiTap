@@ -1,0 +1,140 @@
+1. lập trình hướng đối tượng
+Lập trình hướng đối tượng (Object-Oriented Programming - OOP) trong Java là một phương pháp lập trình dựa trên việc sử dụng các đối tượng.
+Mỗi đối tượng là một thực thể của một lớp (class) và chứa các thuộc tính (properties) và phương thức (methods) để thực hiện các hành động
+- Các đặc trưng chính của lập trình hướng đối tượng trong Java:
++Đóng gói:
+Đây là quá trình gói gọn dữ liệu (thuộc tính) và các phương thức xử lý dữ liệu trong một lớp. Các thành phần của lớp có thể được ẩn đi với các lớp bên ngoài thông qua việc sử dụng các từ khóa truy cập như private, protected, và public.
+Điều này giúp bảo vệ dữ liệu và kiểm soát việc truy cập và sửa đổi dữ liệu.
++Kế thừa
+Một lớp có thể kế thừa các thuộc tính và phương thức từ một lớp khác. Lớp con (subclass) sẽ kế thừa các đặc điểm của lớp cha (superclass) và có thể mở rộng hoặc ghi đè các phương thức của lớp cha.
+Điều này giúp tái sử dụng mã nguồn và xây dựng các mối quan hệ thứ bậc giữa các lớp.
++Đa hình
+Tính đa hình là khả năng của các đối tượng thuộc các lớp có quan hệ kế thừa với nhau thể hiện nhiều hành vi khác nhau khi được gọi thông qua cùng một giao diện.
+Trong Java, tính đa hình cho phép xử lý đối tượng con thông qua tham chiếu đến lớp cha của chúng. Khi gọi phương thức trên đối tượng con thông qua tham chiếu lớp cha,
+phiên bản phương thức được thực thi sẽ phụ thuộc vào kiểu của đối tượng thực tế.
+Đa hình cho phép một đối tượng có thể có nhiều hình thái khác nhau.
+Có hai dạng đa hình chính là đa hình thời gian biên dịch (compile-time polymorphism) thông qua overloading (nạp chồng phương thức) và đa hình thời gian chạy (runtime polymorphism) thông qua overriding (ghi đè phương thức).
++Trừu tượng
+Trừu tượng hóa là quá trình tạo ra một lớp trừu tượng mà không cần phải biết chi tiết triển khai bên trong.
+Lớp trừu tượng chỉ chứa các phương thức trừu tượng (abstract methods) mà các lớp con sẽ triển khai cụ thể. Điều này giúp đơn giản hóa sự phức tạp của hệ thống và tập trung vào những gì cần làm mà không quan tâm đến cách thức thực hiện.
+
+
+2. so sánh Overloading  va Overriding
+-Overloading là một kỹ thuật cho phép tạo ra nhiều phương thức trong cùng một lớp với cùng tên nhưng khác nhau về tham số.
+Overloading xảy ra trong cùng một lớp và được xác định vào thời điểm biên dịch (compile-time).
+-Overriding là quá trình mà một lớp con cung cấp cách triển khai cụ thể cho một phương thức đã được khai báo trong lớp cha.
+Overriding xảy ra giữa các lớp có quan hệ kế thừa và được xác định vào thời điểm chạy (runtime).
+
+
+3.Interface là gì?
+Trong Java, interface là một loại đặc biệt của lớp trừu tượng (abstract class) mà chỉ chứa các phương thức trừu tượng (abstract methods) và các hằng số (constants). Một interface không chứa bất kỳ phương thức có thân (implementation) nào,
+ngoại trừ các phương thức default và static được giới thiệu từ Java 8 trở đi.
+
+Các lớp khác có thể thực hiện (implement) một hoặc nhiều interface bằng cách cung cấp các triển khai cụ thể cho các phương thức trong interface đó. Khi một lớp thực hiện một interface,
+lớp đó phải cung cấp triển khai cho tất cả các phương thức trừu tượng được khai báo trong interface.
+
+
+4.So sánh Interface và Abstract Class
+-Interface
++Một lớp có thể implement nhiều interface.
++Chỉ chứa các phương thức trừu tượng (abstract) (trừ các phương thức default và static từ Java 8).
++Chỉ có thể chứa các hằng số (public static final).
++Không có constructor.
++Hỗ trợ đa kế thừa thông qua việc thực hiện nhiều interface.
++Dùng từ khóa interface khi định nghĩa.
++Được sử dụng để định nghĩa một hợp đồng hoặc bộ hành vi mà nhiều lớp khác nhau có thể thực hiện.
++Các phương thức trong interface mặc định là public.
+-Abstract Class
++Một lớp chỉ có thể kế thừa từ một lớp trừu tượng.
++Có thể chứa cả phương thức trừu tượng và phương thức đã có thân (concrete methods)
++Có thể chứa các biến (fields) với bất kỳ mức độ truy cập nào (private, protected, public)
++Có thể có constructor để khởi tạo các thuộc tính của lớp trừu tượng.
++Không hỗ trợ đa kế thừa trực tiếp, nhưng có thể được kết hợp với interface.
++Dùng từ khóa abstract khi định nghĩa.
++Được sử dụng để cung cấp một lớp cơ sở với các hành vi chung mà các lớp con có thể chia sẻ hoặc ghi đè.
++Các phương thức trong abstract class có thể là public, protected, hoặc private.
+
+
+5.trong mảng có thể thêm được phần tử có length ko
+-Trong Java, các mảng có kích thước cố định ngay khi được khởi tạo.
+Điều này có nghĩa là khi một mảng đã được tạo với kích thước cụ thể
+Nếu cần thêm một phần tử vào một mảng có độ dài hiện tại length,
+phải tạo một mảng mới với kích thước lớn hơn và sao chép các phần tử từ mảng cũ sang mảng mới.
+
+
+6.Array và ArrayList
+-Array
++Kích thước của mảng là cố định ngay khi được khởi tạo, không thể thay đổi kích thước của mảng sau khi đã tạo nó.
+-ArrayList
++Kích thước của ArrayList là linh hoạt, có thể thay đổi được.
+ có thể thêm hoặc xóa các phần tử mà không cần quan tâm đến việc thay đổi kích thước thủ công.
+
+
+7. tìm giá trị nhỏ nhất trong Array
+ Integer[] array = {5, 2, 9, 1, 7};
+ List<Integer> list = Arrays.asList(array);
+ ArrayList<Integer> arrayList = new ArrayList<>(list);
+ Collections.min(arrayList);
+
+
+8.xử lý ngoại lệ
+Trong lập trình nói chung, exception - hay ngoại lệ - là một sự kiện có thể xảy ra trong quá trình thực thi của chương trình,
+và nó có thể làm gián đoạn luồng xử lý thông thường của chương trình đó.
+
+Khi những exception này xuất hiện trong lúc thực thi trường trình,
+chúng ta cần có một cơ chế để xử lý các ngoại lệ này,
+tránh việc các exception này làm gián đoạn, tổn hại hay chết chương trình.
+Quá trình trên gọi là exception handling (xử lý ngoại lệ)
+
+Exception có thể phát sinh do nhiều lý do khác nhau,
+chẳng hạn như truy cập vùng nhớ không hợp lệ (NullPointerException) hay chia cho số không (ArithmeticException).
+Có rất nhiều những lý do khác nhau khiến mã nguồn của chúng ta gặp exception.
+Điều này khiến cho việc exception handling (xử lý ngoại lệ) trở nên vô cùng cần thiết
+
+- try , catch
++try
+Khối try chứa mã mà nghi ngờ có thể gây ra ngoại lệ. Nếu có ngoại lệ xảy ra trong khối try,
+chương trình sẽ tìm đến khối catch tương ứng để xử lý ngoại lệ đó.
++catch
+Khối catch được sử dụng để bắt và xử lý các ngoại lệ ném ra từ khối try.
+có thể có nhiều khối catch để xử lý các loại ngoại lệ khác nhau.
+-finally
+Khối finally chứa mã cần thực thi dù có xảy ra ngoại lệ hay không.
+Thường được dùng để đóng tài nguyên hoặc thực hiện các hành động dọn dẹp.
+-throw
+Dùng để ném một ngoại lệ cụ thể từ một phương thức hoặc đoạn mã.
+tạo ra một ngoại lệ và ném nó để báo hiệu rằng có vấn đề.
+-throws
+Dùng trong khai báo phương thức để chỉ rõ rằng phương thức đó có thể ném ra một hoặc nhiều loại ngoại lệ.
+Điều này yêu cầu các phương thức gọi phải xử lý hoặc tiếp tục khai báo các ngoại lệ đó.
+
+
+9.ví dụ bài toán chia cho 0 sử dụng Exception
+int numerator = 10;
+int denominator = 0;
+
+        try {
+            // Thực hiện phép chia
+            int result = numerator / denominator;
+            System.out.println("Kết quả: " + result);
+        } catch (ArithmeticException e) {
+            // Xử lý lỗi chia cho 0
+            System.out.println("Lỗi: Không thể chia cho 0.");
+        }
+        System.out.println("continue");
++Trong đoạn code trên vẫn continue.
+exception sinh ra để tránh việc làm gián đoạn, tổn hại hay chết chương trình.
+-throw
+     int numerator = 10;
+        int denominator = 0;
+
+        if (denominator == 0) {
+            throw new ArithmeticException("Không thể chia cho 0.");
+        }
+
+        int result = numerator / denominator;
+        System.out.println("continue");
+    }
++Nếu bạn ném một ngoại lệ bằng throw,
+chương trình sẽ dừng lại tại điểm ném ngoại lệ và không tiếp tục thực hiện mã phía sau.
+
